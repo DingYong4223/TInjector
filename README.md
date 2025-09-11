@@ -98,13 +98,3 @@
 
 	2、TLogger默认使用DefLoggerImpl类作为日志打印，如需自定义日志打印，可以实现com.tenpay.injector.ILogger接口，并在程序入口调用如下代码实现注册：
 	    TMLogger.register(TestLogger.class);
-
-## 行为准则
-
-## 如何加入
-    如果有更好的建议和意见，请联系QQ钱包业务团队加入本项目，提交代码修改。
-
-## 团队介绍
-    QQ钱包属于社交平台增值部下的支付服务，负责QQ上的红包、转账、二维码等多项支付业务，期待你的加入！
-    我也不太懂，我们一起弄懂！！！
-    - delanding
