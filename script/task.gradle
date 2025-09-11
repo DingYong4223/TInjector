@@ -1,0 +1,21 @@
+
+gradle.projectsEvaluated {
+    clean.dependsOn(cleanJar)
+}
+
+task cleanJar(type: Delete) {
+    delete 'lib/injector-runtime.jar'
+}
+
+task jarInjectorRuntime(dependsOn: ['assembleDebug'], type: Jar) {
+    baseName 'injector-runtime'
+    from(project.buildDir.absolutePath + '/intermediates/javac/debug/compileDebugJavaWithJavac/classes')
+    into('/')
+    exclude('BuildConfig.class', 'com/tencent/mobileqq/')
+    exclude {
+        it.name.startsWith('R2$') || it.name.startsWith('R$') || it.name == 'R.class' || it.name == 'R2.class'
+    }
+    project.ext.makeJarPath = getArchivePath().getAbsolutePath()
+
+    doLast {}
+}

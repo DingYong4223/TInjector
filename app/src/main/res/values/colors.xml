@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="video_gallery_mask">#7a000000</color>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="white_alpha_50">#7affffff</color>
+    <color name="input_bar_send_btn_bg">#05d380</color>
+    <color name="privilege_little_yellow">#f7fffffc</color>
+    <color name="rectAngleToastBgColor">#a2242424</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="white">#ffffffff</color>
+</resources>

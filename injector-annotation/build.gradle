@@ -1,0 +1,28 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+}
+
+sourceCompatibility = "1.7"
+targetCompatibility = "1.7"
+
+apply plugin: 'maven'
+group='com.tenpay.injector'
+version=rootProject.ext.publish_version
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: "https://mirrors.tencent.com/repository/maven/thirdparty/") {
+                authentication(
+                        userName: rootProject.ext.localProperties.getProperty("publish.name"),
+                        password: rootProject.ext.localProperties.getProperty("publish.key")
+                )
+                pom.groupId = group
+                pom.artifactId = 'injector-annotation'
+            }
+        }
+
+    }
+}
