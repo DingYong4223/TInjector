@@ -12,6 +12,7 @@ buildscript {
 }
 
 android {
+    namespace 'com.tenpay.injector.runtime'
     compileSdkVersion 29
 
     defaultConfig {
@@ -31,35 +32,35 @@ android {
         }
     }
 
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_7
-        targetCompatibility JavaVersion.VERSION_1_7
-    }
-
 }
 
 dependencies {
     testImplementation 'junit:junit:4.12'
 }
 
-apply plugin: 'maven'
+apply plugin: 'maven-publish'
 group='com.tenpay.injector'
 version=rootProject.ext.publish_version
 
-uploadArchives {
-    repositories {
-        mavenDeployer {
-            repository(url: "https://mirrors.tencent.com/repository/maven/thirdparty/") {
-                authentication(
-                        userName: rootProject.ext.localProperties.getProperty("publish.name"),
-                        password: rootProject.ext.localProperties.getProperty("publish.key")
-                )
-                //version rootProject.ext.publish_version
-                pom.groupId = group
-                pom.artifactId = 'injector-runtime'
-                //pom.artifact="build/libs/injector-runtime-${rootProject.ext.publish_version}.jar"
-            }
+// 新配置（maven-publish 插件）
+publishing {
+    // 配置发布的「产物」（Java 库则发布 jar 包）
+    publications {
+        create(MavenPublication) {
+            // 配置 Maven 坐标（与旧 pom 保持一致）
+            groupId = 'com.tenpay.injector'
+            artifactId = 'injector-runtime'
         }
+    }
 
+    // 配置发布仓库（本地 Maven 仓库，与旧配置路径一致）
+    repositories {
+        // maven {
+        //     url = uri('https://your-nexus-repo.com/repository/maven-releases/')
+        //     credentials {
+        //         username = 'your-username'
+        //         password = 'your-password'
+        //     }
+        // }
     }
 }

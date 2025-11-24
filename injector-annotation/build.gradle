@@ -4,8 +4,6 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 }
 
-sourceCompatibility = "1.7"
-targetCompatibility = "1.7"
 java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(11)

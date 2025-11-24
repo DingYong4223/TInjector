@@ -33,7 +33,7 @@ public class InjectorProcessor extends AbstractProcessor {
 
     private Filer filer;
     private Trees jcTrees;
-    private final RScanner rScanner = new RScanner();
+//    private final RScanner rScanner = new RScanner();
 
     @Override
     public Set<String> getSupportedAnnotationTypes() {
@@ -78,11 +78,11 @@ public class InjectorProcessor extends AbstractProcessor {
         out.println("start process tenpay injector...");
         Set<? extends Element> sets = roundEnv.getElementsAnnotatedWith(TBinding.class);
         Map<String, ClsBean> clsMap = new HashMap<>();
-        //new VisitorClsSuper(filer, jcTrees, rScanner).visit(clsMap);
-        new VisitorInitor(filer, jcTrees, rScanner).visit(sets, clsMap);
-        //new VisitorAppendInfo(filer, jcTrees, rScanner).visit(sets, clsMap);
-        new VisitorAppendInform(filer, jcTrees, rScanner).visit(sets, clsMap);
-        new VisitorFinisher(filer, jcTrees, rScanner).visit(sets, clsMap);
+//        //new VisitorClsSuper(filer, jcTrees, rScanner).visit(clsMap);
+//        new VisitorInitor(filer, jcTrees, rScanner).visit(sets, clsMap);
+//        //new VisitorAppendInfo(filer, jcTrees, rScanner).visit(sets, clsMap);
+//        new VisitorAppendInform(filer, jcTrees, rScanner).visit(sets, clsMap);
+//        new VisitorFinisher(filer, jcTrees, rScanner).visit(sets, clsMap);
         return true;
     }
 

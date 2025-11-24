@@ -3,8 +3,8 @@ plugins {
 }//include ':app'
 //include ':test-library'
 include ":injector-annotation"
-//include ":injector-compiler"
-//include ":injector-runtime"
+include ":injector-compiler"
+include ":injector-runtime"
 //include ":injector-plugin"
 //include ":injector-logger"
 //include ":injector-reporter"
