@@ -3,9 +3,6 @@ apply plugin: 'groovy'
 apply plugin: 'java-gradle-plugin'
 apply plugin: 'kotlin'
 
-//sourceCompatibility = JavaVersion.VERSION_1_8
-//targetCompatibility = JavaVersion.VERSION_1_8
-
 repositories {
     mavenLocal()
     google()
