@@ -61,31 +61,31 @@ ext {
     allLicenses = ["Apache-2.0"]
 }
 
-apply plugin: 'maven'
+apply plugin: 'maven-publish'
 group='com.tenpay.injector'
-version=ext.libraryVersion
-uploadArchives {
-    repositories {
-        mavenDeployer {
-            repository(url: "https://mirrors.tencent.com/repository/maven/thirdparty/") {
-                authentication(
-                        userName: rootProject.ext.localProperties.getProperty("publish.name"),
-                        password: rootProject.ext.localProperties.getProperty("publish.key")
-                )
-                //version rootProject.ext.publish_version
-                pom.groupId = group
-                pom.artifactId = 'injector-logger'
-            }
+version=rootProject.ext.publish_version
+
+// 新配置（maven-publish 插件）
+publishing {
+    // 配置发布的「产物」（Java 库则发布 jar 包）
+    publications {
+        create(MavenPublication) {
+            // 配置 Maven 坐标（与旧 pom 保持一致）
+            groupId = 'com.tenpay.injector'
+            artifactId = 'injector-logger'
         }
     }
+
+    // 配置发布仓库（本地 Maven 仓库，与旧配置路径一致）
+    repositories {
+        // maven {
+        //     url = uri('https://your-nexus-repo.com/repository/maven-releases/')
+        //     credentials {
+        //         username = 'your-username'
+        //         password = 'your-password'
+        //     }
+        // }
+    }
 }
-//def localRepoURL = 'file://' + new File(System.getProperty('user.home'), '.m2/repository').absolutePath
-//uploadArchives {
-//    repositories {
-//        mavenDeployer {
-//            repository(url: localRepoURL)
-//        }
-//    }
-//}
 
 
