@@ -8,7 +8,7 @@ dependencies {
 
     implementation("com.android.tools.build:gradle:3.3.0")
     implementation("com.squareup:javapoet:1.10.0")
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:${property("kotlin_version")}")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:${Versions.kotlin_version}")
 
     testImplementation("junit:junit:4.12")
     testImplementation("com.google.truth:truth:0.42")

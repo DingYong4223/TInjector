@@ -1,7 +1,4 @@
 buildscript {
-    extra.apply {
-        set("kotlin_version", "2.2.21")
-    }
     repositories {
         google()
         jcenter()

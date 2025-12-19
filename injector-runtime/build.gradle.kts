@@ -3,8 +3,6 @@ plugins {
     id("maven-publish")
 }
 
-apply(from = "../script/task.gradle")
-
 buildscript {
     repositories {
         mavenCentral()

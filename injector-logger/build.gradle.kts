@@ -21,14 +21,14 @@ buildscript {
     }
     dependencies {
         classpath("com.android.tools.build:gradle:3.4.2")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${property("kotlin_version")}")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin_version}")
     }
 }
 
 dependencies {
     implementation(gradleApi())
     implementation(localGroovy())
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:${property("kotlin_version")}")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.kotlin_version}")
     implementation(project(":injector-annotation"))
 //    implementation("com.tenpay.injector:injector-annotation:1.0.3")
     implementation("com.android.tools.build:gradle:3.1.4")
