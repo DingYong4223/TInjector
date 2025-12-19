@@ -1,4 +1,7 @@
 # TInjector
+本工程未发布版本到远端maven仓库,运行本工程按照如下步骤实现
+1、屏蔽app(在settings.gradle.kts中),sync工程,发布各个模块到本地
+2、去除app模块屏蔽依赖,重新sync工程
 
 ## <a target=_blank href="https://git.code.oa.com/QwalletAndroid/TInjector">项目介绍</a>
 	特别提醒: 本系列组建是本人在手Q Android开发时业务需要自己实现的, 已完全和业务剥离成为独立的工具(包名暂时保留tenpay相关), 无业务敏感数据, 欢迎打架使用.

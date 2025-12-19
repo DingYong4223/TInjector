@@ -1,5 +1,3 @@
-import jdk.tools.jlink.resources.plugins
-
 plugins {
     id("com.android.application")
     id("kotlin-android")
@@ -20,10 +18,6 @@ buildscript {
 }
 
 apply(plugin = "injector-logger")
-
-configure<InjectorExtension> {
-    variant = "DEBUG"
-}
 
 android {
     compileSdk = 29
@@ -55,7 +49,7 @@ android {
 
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:${property("kotlin_version")}")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.kotlin_version}")
     implementation("androidx.appcompat:appcompat:1.0.2")
     implementation("androidx.core:core-ktx:1.0.2")
     implementation("androidx.constraintlayout:constraintlayout:1.1.3")
@@ -85,9 +79,4 @@ dependencies {
 }
 
 apply(from = "../jacoco_offline.gradle")
-
-// 定义 InjectorExtension 接口以支持类型安全的配置
-interface InjectorExtension {
-    var variant: String
-}
 
