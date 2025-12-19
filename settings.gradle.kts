@@ -1,0 +1,12 @@
+plugins {
+    id("org.gradle.toolchains.foojay-resolver-convention") version "0.8.0"
+}
+
+//include(":app")
+include(":injector-annotation")
+include(":injector-compiler")
+include(":injector-runtime")
+include(":injector-plugin")
+include(":injector-logger")
+include(":injector-reporter")
+
